@@ -1,5 +1,10 @@
 {
   parser: 'babel-eslint',
   plugins: ['import', 'jsx-a11y', 'react', 'react-hooks'],
+  extends: [
+    'plugin:import/recommended',
+    'plugin:jsx-a11y/recommended',
+    'plugin:react/recommended',
+  ],
   rules: {}
 }

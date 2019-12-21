@@ -9,9 +9,18 @@ module.exports = {
   module: {
     rules: [
       {
+        enforce: 'pre',
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader',
+        options: {
+          emitWarning: true,
+        },
+      },
+      {
         test: /\.(js|jsx)$/,
         exclude: '/node_modules/',
-        loader: ['babel-loader', 'eslint-loader']
+        loader: ['babel-loader']
       },
       {
         test: /\.s[ac]ss$/i,
