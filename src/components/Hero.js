@@ -20,7 +20,6 @@ const Hero = (props) => {
           path: props.slides[newIndex]
         }
       })
-      console.log(currentImage);
     }, 7500);
 
     return () => {
