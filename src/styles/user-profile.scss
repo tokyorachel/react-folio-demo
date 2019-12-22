@@ -1,0 +1,10 @@
+.user-profile {
+  .user-avatar {
+    border-radius: 50%;
+    width: 100px;
+  }
+
+  &.full {
+    text-align: center;
+  }
+}

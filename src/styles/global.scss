@@ -1,9 +1,72 @@
-//global styles
+@import 'variables';
+
+/* Tags */
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: proxima-nova, Noto Sans JP, sans-serif;
+  font-size: 16px;
+  margin-top: 5.125rem; /* offsets sticky header height */
+}
+
+a {
+  &:not(.image-link) {
+    border-bottom: 2px solid transparent;
+    color: $brand-purple;
+    text-decoration: none;
+
+
+    &:hover,
+    &:focus {
+      border-bottom: 2px solid $brand-purple;
+    }
+  }
 }
 
 img {
   max-height: 100%;
   max-width: 100%;
+}
+
+em {
+  color: $brand-purple;
+  font-style: normal;
+}
+
+/* Global Elements */
+
+header {
+  background-color: $light-gray;
+  border-bottom: 1px solid $mid-gray;
+  padding: 1.5rem $spacer-horizontal;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+section {
+  padding-left: $spacer-horizontal;
+  padding-right: $spacer-horizontal;
+  padding-top: 2rem;
+}
+
+.theme-dark {
+  background-color: rgba(33, 33, 33, .7);
+  color: $white;
+}
+
+.image-link {
+  border-radius: 6px;
+  box-shadow: 0 0 3px $mid-gray;
+  overflow: hidden;
+
+  &:hover,
+  &:focus {
+    transform: translateY(-10px);
+    transition-duration: .25s;
+  }
 }

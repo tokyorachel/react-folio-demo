@@ -1,5 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+
+import UserProfile from './UserProfile';
 
 import '../styles/user.scss';
 
@@ -11,16 +14,16 @@ const User = (props) => {
 
   return (
     <div className="user">
-      <h1 className="user-name">{ profile.name }</h1>
-      { profile.avatar &&
-        <img className="user-avatar" src={ profile.avatar.thumb } alt="User avatar" />
-      }
-      <div className="user-location">{ profile.location }</div>
+      <UserProfile type="full" profile={ profile } avatar={ profile.avatar } />
       <div className="user-works">
         { works && works.map((work, i) => {
           return(
-            <div key={i} className="user-work">
-              <img src={ work.thumbnail } alt={`${ work.title } by ${ profile.name }.`} />
+            <div key={ work.id } className="user-work">
+              <Link
+                to={`/works/${work.id}`}
+                className="user-work image-link">
+                <img src={ work.thumbnail } alt={`${ work.title } by ${ profile.name }.`} />
+              </Link>
               <div className="user-work-title">{ work.title }</div>
             </div>
           )

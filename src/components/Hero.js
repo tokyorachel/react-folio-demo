@@ -42,4 +42,8 @@ const Hero = (props) => {
   )
 }
 
+Hero.propTypes = {
+  slides: PropTypes.array
+}
+
 export default Hero;

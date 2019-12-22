@@ -1,5 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+
+import UserProfile from './UserProfile';
 
 import '../styles/creator.scss'
 
@@ -11,15 +14,20 @@ const Creator = (props) => {
   return (
     <div className="creator">
       <div className="creator-details">
-        { creator.name }
-        <img src={ creator.avatar } alt="Creator avatar" />
+        <Link to={`/users/${creator.screen_name}`}>
+          <UserProfile type="short" profile={ creator } avatar={{ thumb: creator.avatar }} />
+        </Link>
+        
       </div>
       <div className="creator-works">
         { creator.works && creator.works.map((work)=>{
           return (
-            <div key={ work.id } className="creator-works-container">
+            <Link
+            to={`/works/${work.id}`}
+            key={ work.id }
+            className="creator-work image-link">
               <img src={ work.thumbnail} alt={ work.title } />
-            </div>
+            </Link>
           )
         })}
       </div>
@@ -29,8 +37,9 @@ const Creator = (props) => {
 
 Creator.propTypes = {
   creator: PropTypes.shape({
-    name: PropTypes.string,
     avatar: PropTypes.string,
+    name: PropTypes.string,
+    screen_name: PropTypes.string,
     works: PropTypes.array
   }),
 }

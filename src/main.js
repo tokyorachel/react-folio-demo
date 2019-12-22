@@ -6,10 +6,12 @@ import {
   Switch
 } from 'react-router-dom';
 
-import CreatorsPage from './pages/CreatorsPage';
-import HomePage from './pages/HomePage';
-import UserPage from './pages/UserPage';
-import WorkPage from './pages/WorkPage';
+import Navigation from './components/Navigation';
+
+import CreatorsPage from './containers/CreatorsPage';
+import HomePage from './containers/HomePage';
+import UserPage from './containers/UserPage';
+import WorkPage from './containers/WorkPage';
 
 import './styles/global.scss';
 
@@ -18,12 +20,17 @@ class App extends React.Component {
     return (
       <Router>  
         <div>
-          <Switch>
-            <Route exact path='/' component={HomePage} />
-            <Route path='/user' component={UserPage} />
-            <Route path='/work' component={WorkPage} />
-            <Route path='/creators' component={CreatorsPage} />
-          </Switch>
+          <header>
+            <Navigation />
+          </header>
+          <main>
+            <Switch>
+              <Route exact path='/' component={HomePage} />
+              <Route path='/users/:id' component={UserPage} />
+              <Route path='/works/:id' component={WorkPage} />
+              <Route path='/creators' component={CreatorsPage} />
+            </Switch>
+          </main>
         </div>
       </Router> 
     )     
@@ -32,5 +39,5 @@ class App extends React.Component {
 
 ReactDOM.render(
   <App />,
-  document.getElementById('app')
+  document.getElementById('root')
 );

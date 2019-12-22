@@ -1,6 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import UserProfile from './UserProfile';
+
+import '../styles/work.scss';
+
 const Work = (props) => {
   const {
     work
@@ -10,13 +14,20 @@ const Work = (props) => {
     <>
     { work &&
       <div className="work">
-        { work.title }
-        { work.author && work.author.profile.name }
-        { work.images && work.images.map((image) => {
-          return (
-            <img key={ image.id } src={ image.urls.list } alt={ work.title } />
-          )
-        })}
+        { work.author && work.author.profile &&
+          <div className="work-details">
+            <h1>{ work.name }</h1>
+            <p>{ work.description }</p>
+            <UserProfile type="full" profile={ work.author.profile } avatar={ work.author.profile.avatar } />
+          </div>
+        }
+        <div className="work-images">
+          { work.images && work.images.map((image) => {
+            return (
+              <img key={ image.id } src={ image.urls.list } alt={ work.title } />
+            )
+          })}
+        </div>
       </div>
     }
     </>
@@ -25,9 +36,11 @@ const Work = (props) => {
 
 Work.propTypes = {
   work: PropTypes.shape({
-    title: PropTypes.string,
     author: PropTypes.object,
-    images: PropTypes.array
+    description: PropTypes.string,
+    images: PropTypes.array,
+    name: PropTypes.string,
+    title: PropTypes.string
   }),
 }
 

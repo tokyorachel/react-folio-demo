@@ -6,10 +6,17 @@
     grid-auto-rows: minmax(200px, auto);
     grid-gap: $grid-gap;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    padding-top: 2rem;
 
     .user-work {
       display: flex;
       flex-direction: column;
+
+      .user-work-title {
+        color: $black;
+        padding: 8px 0;
+        text-decoration: none;
+      }
     }
   }
 }

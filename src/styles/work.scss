@@ -1,0 +1,14 @@
+@import 'variables';
+
+.work {
+  .work-details {
+    height: 100vh;
+    position: fixed;
+    right: $spacer-horizontal;
+    width: calc(40% - #{$spacer-horizontal});
+  }
+
+  .work-images {
+    width: calc(60% - #{$spacer-horizontal});
+  }
+}
