@@ -1,9 +1,11 @@
+const path = require ('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const SassLintPlugin = require('sass-lint-webpack');
 
 module.exports = {
   entry: './src/main.js',
   output: {
-    path: __dirname + 'dist/',
+    path: path.join(__dirname,'dist'),
     filename: 'bundle.js',
     publicPath: '/'
   },
@@ -39,6 +41,9 @@ module.exports = {
           ignore: [ 'node_modules/**/*' ],
         },
       },
+    }),
+    new HtmlWebpackPlugin({
+      template: 'index.html'
     }),
   ],
 }
