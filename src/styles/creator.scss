@@ -1,0 +1,21 @@
+@import 'variables';
+
+.creator {
+  .creator-works {
+    display: grid;
+    grid-auto-rows: minmax(200px, auto);
+    grid-gap: $grid-gap;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+    .creator-works-container {
+      border-radius: $border-radius;
+      box-shadow: 0 0 3px $mid-gray;
+      overflow: hidden;
+
+      &:hover {
+        transform: translateY(-10px);
+        transition-duration: .25s;
+      }
+    }
+  }
+}
