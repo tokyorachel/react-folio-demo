@@ -4,12 +4,29 @@
     <title>foriio.com RE-WORK</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="foriio.com is a portfolio platform for all creators. It allows creative artists to create an account, upload photos and add to works & collections.">
+    <style>
+      .placeholder-logo {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+      }
+    </style>
   </head>
   <body>
-    <noscript>
-      Sorry, you need to enable Javascript to run this app.
-    </noscript>
-    <div id="root"></div>
+    <noscript>Sorry, you need to enable Javascript to use this app.</noscript>
+    <div id="root">
+      <div class="placeholder-logo">
+        <img src="/assets/logo_b.png" alt="foriio logo"/>
+        <p>Please wait while our experience loads.</p>
+      </div>
+    </div>
     <script src="/bundle.js"></script>
   </body>
 </html>
