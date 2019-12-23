@@ -1,6 +1,8 @@
 @import 'variables';
 
 .user {
+  min-height: calc(100vh - #{$sticky-header});
+
   .user-works {
     display: grid;
     grid-auto-rows: minmax(200px, auto);

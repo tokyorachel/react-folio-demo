@@ -1,5 +1,4 @@
 import React from 'react';
-import Loader from 'react-loader';
 import PropTypes from 'prop-types';
 
 import User from '../components/User';
@@ -68,9 +67,7 @@ class UserPage extends React.Component {
 
     return (
       <section className="user-page">
-        <Loader loaded={ loaded }>
-          <User profile={ userProfile } works={ userWorks } />
-        </Loader>
+        <User profile={ userProfile } works={ userWorks } loaded={ loaded }/>
       </section>
      )
   }

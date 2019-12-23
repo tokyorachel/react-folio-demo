@@ -9,6 +9,7 @@
   }
 
   .work-images {
+    position: relative;
     width: calc(60% - #{$spacer-horizontal});
   }
 }

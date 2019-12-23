@@ -1,7 +1,8 @@
 import React from 'react';
-import Loader from 'react-loader';
+// import Loader from 'react-loader';
 
 import Creator from '../components/Creator';
+import Spinner from '../components/Spinner';
 
 class CreatorsPage extends React.Component {
   constructor(props) {
@@ -40,13 +41,17 @@ class CreatorsPage extends React.Component {
 
     return (
       <section className="creators-page">
-        <Loader loaded={ loaded }>
-          { creatorsData.length > 0 && creatorsData.map((creatorData) => {
+        { loaded &&
+          creatorsData.length > 0 && creatorsData.map((creatorData) => {
             return (
               <Creator key={ creatorData.id } creator={ creatorData } />
             )
-          })}
-        </Loader>
+          })
+        }
+        {!loaded &&
+          <Spinner />
+        }
+        
       </section>
     )
   }

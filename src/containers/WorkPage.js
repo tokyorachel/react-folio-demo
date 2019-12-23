@@ -1,5 +1,4 @@
 import React from 'react';
-import Loader from 'react-loader';
 import PropTypes from 'prop-types';
 
 import Work from '../components/Work';
@@ -55,9 +54,7 @@ class WorkPage extends React.Component {
 
     return (
       <section className="work-page">
-        <Loader loaded={ loaded }>
-          <Work work={ workData } />
-        </Loader>
+        <Work work={ workData } loaded={ loaded }/>
       </section>
     )
   }

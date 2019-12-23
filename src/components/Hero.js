@@ -25,7 +25,7 @@ const Hero = (props) => {
     return () => {
       clearInterval(timer);
     };
-  }, [])
+  }, [props.slides])
 
 
   return (

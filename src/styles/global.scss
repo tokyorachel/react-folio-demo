@@ -10,7 +10,7 @@ body {
 body {
   font-family: proxima-nova, Noto Sans JP, sans-serif;
   font-size: 16px;
-  margin-top: 5.125rem; /* offsets sticky header height */
+  margin-top: $sticky-header; /* offsets sticky header height */
 }
 
 a {
@@ -46,12 +46,14 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 99;
 }
 
 section {
   padding-left: $spacer-horizontal;
   padding-right: $spacer-horizontal;
   padding-top: 2rem;
+  position: relative;
 }
 
 .theme-dark {
