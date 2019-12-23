@@ -32,16 +32,15 @@ class WorkPage extends React.Component {
       });
   }
 
-  componentDidMount(){
-    // For demo purposes, we're making '43' the fallback value
-    const workId = this.props.match.params.id || '43';
+  componentDidMount() {
+    const workId = this.props.match.params.id
     this.fetchData(workId);
   }
 
   componentDidUpdate(prevProps, prevState) {
     // If we change the url id, we need to update our state
     if (this.props.match.params.id !== prevProps.match.params.id) {
-      const workId = this.props.match.params.id || '43';
+      const workId = this.props.match.params.id;
       this.fetchData(workId);
     }
   }

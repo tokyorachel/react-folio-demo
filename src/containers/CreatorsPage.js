@@ -1,5 +1,4 @@
 import React from 'react';
-// import Loader from 'react-loader';
 
 import Creator from '../components/Creator';
 import Spinner from '../components/Spinner';

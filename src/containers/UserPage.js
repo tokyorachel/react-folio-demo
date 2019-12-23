@@ -45,15 +45,14 @@ class UserPage extends React.Component {
   }
 
   componentDidMount() {
-    // For demo purposes, we're making 'hirohito' a fallback value
-    const userId = this.props.match.params.id || 'hirohito';
+    const userId = this.props.match.params.id;
     this.fetchData(userId);
   }
 
   componentDidUpdate(prevProps, prevState) {
     // If we change the url id, we need to update our state
     if (this.props.match.params.id !== prevProps.match.params.id) {
-      const userId = this.props.match.params.id || 'hirohito';
+      const userId = this.props.match.params.id;
       this.fetchData(userId);
     }
   }
