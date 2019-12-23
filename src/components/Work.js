@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import ImageWithPlaceholder from './ImageWithPlaceholder';
 import LoveThis from './LoveThis';
 import Spinner from './Spinner';
 import UserProfile from './UserProfile';
@@ -28,7 +29,10 @@ const Work = (props) => {
           <>
           { work.images && work.images.map((image) => {
             return (
-              <img key={ image.id } src={ image.urls.list } alt={ work.title } />
+              <ImageWithPlaceholder
+                key={ image.id }
+                src={ image.urls.list }
+                alt={ work.title } />
             )
           })}
           </>

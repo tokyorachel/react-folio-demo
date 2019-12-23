@@ -1,0 +1,14 @@
+@import 'variables';
+
+.image-loading-placeholder {
+  background-color: $dark-transparency;
+  border-radius: $border-radius;
+  color: $white;
+  display: block;
+  font-size: 1.6rem;
+  height: 116px;
+  margin: 1rem auto;
+  padding-top: 72px;
+  text-align: center;
+  width: 260px;
+}

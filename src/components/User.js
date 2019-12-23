@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
+import ImageWithPlaceholder from './ImageWithPlaceholder';
 import Spinner from './Spinner';
 import UserProfile from './UserProfile';
 
@@ -26,7 +27,10 @@ const User = (props) => {
                   <Link
                     to={`/works/${work.id}`}
                     className="user-work image-link">
-                    <img src={ work.thumbnail } alt={`${ work.title } by ${ profile.name }.`} />
+                    <ImageWithPlaceholder 
+                      src={ work.thumbnail }
+                      alt={ `${ work.title } by ${ profile.name }.` }
+                    />
                   </Link>
                   <div className="user-work-title">{ work.title }</div>
                 </div>

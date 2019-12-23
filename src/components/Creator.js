@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
+import ImageWithPlaceholder from './ImageWithPlaceholder';
 import UserProfile from './UserProfile';
 
 import '../styles/creator.scss'
@@ -26,7 +27,7 @@ const Creator = (props) => {
             to={`/works/${work.id}`}
             key={ work.id }
             className="creator-work image-link">
-              <img src={ work.thumbnail} alt={ work.title } />
+              <ImageWithPlaceholder src={ work.thumbnail } alt={ work.title } />
             </Link>
           )
         })}
