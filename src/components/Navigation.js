@@ -10,7 +10,7 @@ const Navigation = () => {
         <li className="menu-logo"><Link to="/">foriio</Link></li>
         <li><Link to="/creators">discover creators</Link></li>
         <li><Link to="/users/hirohito">User Hirohito</Link></li>
-        <li><Link to="/works/43">Hirohito Work 43</Link></li>
+        <li><Link to="/works/43">Work 43</Link></li>
       </ul>
     </nav>
   )

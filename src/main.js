@@ -9,6 +9,7 @@ import {
 import Navigation from './components/Navigation';
 
 import CreatorsPage from './containers/CreatorsPage';
+import FourOhFour from './containers/FourOhFour';
 import HomePage from './containers/HomePage';
 import UserPage from './containers/UserPage';
 import WorkPage from './containers/WorkPage';
@@ -29,6 +30,7 @@ class App extends React.Component {
               <Route path='/users/:id' component={UserPage} />
               <Route path='/works/:id' component={WorkPage} />
               <Route path='/creators' component={CreatorsPage} />
+              <Route component={FourOhFour} />
             </Switch>
           </main>
         </div>
