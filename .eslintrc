@@ -11,5 +11,8 @@
     'plugin:jsx-a11y/recommended',
     'plugin:react/recommended',
   ],
-  rules: {}
+  rules: {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
+  }
 }
