@@ -27,17 +27,15 @@ class App extends React.Component {
   }
 
   setLoved = (workId) => {
-    console.log("workId", workId);
     this.setState({ lovedWorks: [...this.state.lovedWorks, workId] });
-    console.log("state", this.state);
   };
 
   render(){
     const user = {...this.state}
     return (
-      <UserProvider value={user}>
-        <Router>  
-          <div>
+      <Router>  
+        <div>
+          <UserProvider value={user}>
             <header>
               <Navigation />
             </header>
@@ -50,9 +48,9 @@ class App extends React.Component {
                 <Route component={FourOhFour} />
               </Switch>
             </main>
-          </div>
-        </Router> 
-      </UserProvider>
+          </UserProvider>
+        </div>
+      </Router> 
     )     
   }
 }
